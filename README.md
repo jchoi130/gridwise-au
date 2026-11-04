@@ -73,3 +73,69 @@ Status: 🚧 Early Development
 Focus: Machine Learning · Time Series Forecasting · Energy Analytics · Open Data · Australia
 
 Further updates will be published as development progresses.
+
+
+ok mate do you think we should add this to github at this stage?
+Absolutely, mate! 🔥 I think we should push GridWise AU to GitHub now.
+
+We've achieved enough to show that this is a genuine data science project, not just an idea in a README.
+
+What we've accomplished
+Milestone
+
+Status
+
+Downloaded real AEMO electricity data
+
+ Complete
+
+Validated 8,640 records
+
+ Complete
+
+Created price and demand charts
+
+ Complete
+
+Created demand-versus-price scatter plot
+
+ Complete
+
+Measured Pearson correlation: +0.738
+
+ Complete
+
+Publish the first milestone to GitHub
+
+Next
+
+Step 1 — Update your README
+Open README.md in VS Code and add this section below your existing project description.
+
+## Current Progress
+
+### Phase 1 — NSW Electricity Market Analysis
+
+Completed:
+- Downloaded September 2026 NSW electricity market data from AEMO.
+- Validated 8,640 five-minute observations.
+- Checked missing values, duplicate timestamps and time gaps.
+- Visualised wholesale electricity prices and demand.
+- Analysed the relationship between electricity demand and wholesale prices.
+
+### Initial Findings
+
+Using 720 hourly observations from September 2026:
+
+- Pearson correlation between demand and price: **+0.738**
+- Higher-demand hours generally coincided with higher wholesale prices.
+- Wholesale prices also varied substantially at similar demand levels.
+
+These are preliminary findings from one month of data. Correlation does not establish causation.
+
+### Next Steps
+
+- Expand historical data collection to three years.
+- Investigate seasonal patterns.
+- Incorporate weather and generation data.
+- Develop machine learning forecasting models.
