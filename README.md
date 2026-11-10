@@ -1,141 +1,274 @@
-# gridwise-au
-Open-source Australian electricity market intelligence and forecasting platform
 GridWise AU
 
-Australian Electricity Market Intelligence & Forecasting
+An open-source learning project exploring Australian electricity market data, wholesale price trends, and future forecasting.
 
-🚧 Work in Progress — Currently in Early Development
+📖 Project Overview
 
-GridWise AU is an open-source machine learning project focused on analysing, visualising, and forecasting Australia's electricity market using publicly available data.
+GridWise AU is a Python-based data analysis project focused on understanding electricity demand and wholesale electricity prices in Australia's National Electricity Market (NEM).
 
-The project aims to make electricity market information more accessible, transparent, and understandable for Australians.
+The project currently focuses on New South Wales (NSW1) using historical electricity market data published by the Australian Energy Market Operator (AEMO).
 
-🎯 Project Objectives
+The main goals are to:
 
-Electricity Price Forecasting: Explore machine learning models to forecast wholesale electricity prices across Australia's National Electricity Market (NEM).
+Understand how electricity demand and wholesale prices change over time.
 
-Energy Demand Analysis: Identify historical consumption patterns, seasonal trends, and peak demand periods.
+Explore the relationship between electricity demand and wholesale electricity prices.
 
-Market Insights: Visualise electricity price fluctuations, demand trends, and regional market differences.
+Identify patterns across different months, seasons, and times of day.
 
-Explainable Predictions: Investigate the factors influencing electricity prices and demand.
+Develop practical skills in Python, SQL, data analysis, and visualisation.
 
-Accessible Dashboard: Develop a free, interactive web dashboard for exploring electricity market data.
+Eventually build simple forecasting models and an interactive dashboard.
 
-📊 Data Sources
+Note: Wholesale electricity prices are different from the retail electricity tariffs paid by households.
 
-The project will primarily use publicly available Australian datasets, including:
+🛠️ Technologies Used
 
-Australian Energy Market Operator (AEMO) — Wholesale electricity prices, demand, and market data.
+Technology
 
-Australian Bureau of Statistics (ABS) — Relevant Australian economic and demographic statistics.
+Purpose
 
-Bureau of Meteorology (BoM) — Weather and climate data, subject to access and licensing requirements.
+Python
 
-🛠️ Proposed Technology Stack
+Data collection, processing, and analysis
 
-Python — Data processing and analysis
+Pandas
 
-Pandas / NumPy — Data manipulation
+Working with CSV files and calculating statistics
 
-Scikit-learn — Machine learning and forecasting
+Matplotlib
 
-React / TypeScript — Interactive dashboard
+Creating charts and visualisations
 
-GitHub Actions — Automated data processing
+Requests
 
-GitHub Pages — Free static website hosting
+Downloading historical electricity data
 
-Technologies may change as development progresses.
+Git
 
-🗺️ Development Roadmap
+Tracking changes to the project
 
-Phase 1 — Data collection and exploratory analysis
+GitHub
 
-Phase 2 — Historical electricity market visualisation
+Hosting and sharing the project
 
-Phase 3 — Electricity price and demand forecasting
+Planned Technologies
 
-Phase 4 — Model evaluation and explainability
+PostgreSQL: Store and query historical electricity market data.
 
-Phase 5 — Interactive web dashboard
+DataGrip: Write SQL queries and manage the PostgreSQL database.
 
-Phase 6 — Public deployment and documentation
+Streamlit: Build an interactive electricity market dashboard.
 
-🌏 Project Vision
+Scikit-learn: Explore beginner-friendly electricity demand and price-risk forecasting.
 
-To build a free, accessible, and data-driven platform that helps Australians better understand electricity market trends and supports informed energy-related decisions.
+Power BI: Create additional data visualisations (optional).
 
-Note: Wholesale electricity prices are not equivalent to household retail electricity tariffs. Forecasts and insights will be indicative, not personalised electricity bill predictions.
+These tools are part of the future roadmap and have not yet been integrated into GridWise AU.
 
-Status: 🚧 Early Development
+📊 Dataset
 
-Focus: Machine Learning · Time Series Forecasting · Energy Analytics · Open Data · Australia
+Source: Australian Energy Market Operator (AEMO)
 
-Further updates will be published as development progresses.
+Dataset: Price and Demand
 
+Region: NSW1 — New South Wales
 
-ok mate do you think we should add this to github at this stage?
-Absolutely, mate! 🔥 I think we should push GridWise AU to GitHub now.
+Historical period analysed: October 2023 to September 2026
 
-We've achieved enough to show that this is a genuine data science project, not just an idea in a README.
+The three-year dataset contains:
 
-What we've accomplished
-Milestone
+36 months of historical records.
 
-Status
+315,648 five-minute observations.
 
-Downloaded real AEMO electricity data
+Electricity demand measured in megawatts (MW).
 
- Complete
+Wholesale electricity prices measured in Australian dollars per megawatt-hour (AUD/MWh).
 
-Validated 8,640 records
+The original data comes from:
 
- Complete
+AEMO Price and Demand Data
 
-Created price and demand charts
+Large downloaded and processed datasets are excluded from the Git repository. Python scripts are provided to reproduce the analysis.
 
- Complete
+✅ Completed Work
 
-Created demand-versus-price scatter plot
+1. Data Collection
 
- Complete
+Created Python scripts to download historical NSW electricity market data from AEMO.
 
-Measured Pearson correlation: +0.738
+2. Data Validation
 
- Complete
+Checked for missing values, duplicate timestamps, and irregular five-minute intervals to help ensure the dataset is suitable for analysis.
 
-Publish the first milestone to GitHub
+3. Electricity Market Visualisation
 
-Next
+Created charts showing historical NSW electricity demand and wholesale electricity prices.
 
-Step 1 — Update your README
-Open README.md in VS Code and add this section below your existing project description.
+4. Demand and Price Correlation
 
-## Current Progress
+Investigated whether higher electricity demand tends to occur alongside higher wholesale electricity prices.
 
-### Phase 1 — NSW Electricity Market Analysis
+For September 2026, the hourly demand–price Pearson correlation was approximately +0.738, indicating a strong positive linear relationship during that month.
 
-Completed:
-- Downloaded September 2026 NSW electricity market data from AEMO.
-- Validated 8,640 five-minute observations.
-- Checked missing values, duplicate timestamps and time gaps.
-- Visualised wholesale electricity prices and demand.
-- Analysed the relationship between electricity demand and wholesale prices.
+5. Three-Year Correlation Analysis
 
-### Initial Findings
+Expanded the analysis to 36 months, examining how the relationship changes over time.
 
-Using 720 hourly observations from September 2026:
+Key observations:
 
-- Pearson correlation between demand and price: **+0.738**
-- Higher-demand hours generally coincided with higher wholesale prices.
-- Wholesale prices also varied substantially at similar demand levels.
+All 36 months showed positive demand–price correlations.
 
-These are preliminary findings from one month of data. Correlation does not establish causation.
+The strongest monthly correlation was approximately +0.787 in October 2023.
 
-### Next Steps
+The weakest monthly correlation was approximately +0.156 in May 2024.
 
-- Expand historical data collection to three years.
-- Investigate seasonal patterns.
-- Incorporate weather and generation data.
-- Develop machine learning forecasting models.
+Correlation strengths varied substantially across months.
+
+Correlations calculated across complete years were generally weaker than those observed in some individual months.
+
+These findings suggest that demand alone cannot fully explain wholesale electricity price movements.
+
+6. Hour-of-Day Analysis
+
+Calculated average electricity demand and wholesale prices for each hour of the day using three years of historical data.
+
+Key observations:
+
+Highest average wholesale price: $278.68/MWh, between 5 PM and 6 PM.
+
+Highest average electricity demand: 9,407 MW, between 6 PM and 7 PM.
+
+Lowest average wholesale price: $35.38/MWh, between 10 AM and 11 AM.
+
+The results show a pronounced evening peak in average wholesale prices.
+
+These are historical averages, not forecasts. Correlation also does not establish causation.
+
+📈 Visualisations
+
+The project currently includes charts such as:
+
+NSW wholesale electricity prices during September 2026.
+
+NSW electricity demand during September 2026.
+
+NSW electricity demand versus wholesale price.
+
+Monthly demand–price correlations across three years.
+
+Average NSW wholesale electricity prices by hour of day.
+
+Generated charts are stored in outputs/charts/.
+
+📁 Project Structure
+
+gridwise-au/
+├── src/
+│   ├── fetch_aemo.py
+│   ├── check_aemo_data.py
+│   ├── plot_aemo.py
+│   ├── demand_vs_price.py
+│   ├── download_36_months.py
+│   ├── monthly_correlations.py
+│   └── hour_of_day.py
+├── data/
+│   ├── raw/
+│   └── processed/
+├── outputs/
+│   ├── charts/
+│   └── tables/
+├── .gitignore
+└── README.md
+
+Folder descriptions:
+
+src/ — Python scripts used for data collection and analysis.
+
+data/raw/ — Original downloaded AEMO data.
+
+data/processed/ — Combined and prepared datasets.
+
+outputs/charts/ — Generated graphs and visualisations.
+
+outputs/tables/ — CSV summaries of analysis results.
+
+🚀 Getting Started
+
+1. Clone the repository
+
+git clone https://github.com/jchoi130/gridwise-au.git
+cd gridwise-au
+
+2. Create a Python virtual environment
+
+On Windows:
+
+py -m venv .venv
+
+3. Install the required Python libraries
+
+.\.venv\Scripts\python.exe -m pip install pandas matplotlib requests
+
+4. Download and prepare the historical dataset
+
+.\.venv\Scripts\python.exe src\download_36_months.py
+
+This script downloads and validates the historical AEMO records, then creates the processed three-year dataset.
+
+5. Run the analysis
+
+For monthly correlations:
+
+.\.venv\Scripts\python.exe src\monthly_correlations.py
+
+For hourly electricity prices:
+
+.\.venv\Scripts\python.exe src\hour_of_day.py
+
+Results are displayed in the terminal, with relevant charts and tables saved in the outputs/ directory.
+
+🗺️ Project Roadmap
+
+Download historical electricity market data.
+
+Validate and clean data.
+
+Visualise demand and wholesale electricity prices.
+
+Investigate demand–price correlations.
+
+Analyse three years of NSW electricity market data.
+
+Explore hourly electricity price patterns.
+
+Set up PostgreSQL and connect using DataGrip.
+
+Learn and apply SQL queries to electricity data.
+
+Connect Python to PostgreSQL.
+
+Build an interactive Streamlit dashboard.
+
+Investigate additional factors affecting electricity prices.
+
+Develop and evaluate introductory forecasting models.
+
+🎯 Project Purpose
+
+GridWise AU is both a personal learning project and an effort to make Australian electricity market data easier to explore and understand.
+
+The project is being developed incrementally, with a focus on clear code, reproducible analysis, and practical learning.
+
+The long-term goal is to create an accessible platform for understanding electricity market behaviour and investigating how wholesale market conditions relate to broader electricity costs.
+
+⚠️ Disclaimer
+
+GridWise AU is an educational and exploratory project.
+
+Its analysis uses historical market data and should not be treated as financial advice, retail electricity pricing guidance, or a reliable prediction of future electricity costs.
+
+Electricity market conditions are influenced by many factors, and historical relationships do not guarantee future outcomes.
+
+GridWise AU — Understanding Australia's electricity market, one dataset at a time. ⚡
